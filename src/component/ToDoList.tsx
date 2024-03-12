@@ -17,7 +17,11 @@ const toDoState = atom<IToDo[]>({
 });
 
 function ToDoList() {
+  //const toDos = useRecoilValue(toDoState);
+  //const setToDos = useSetRecoilState(toDoState);
+  //위의 두개를 합친 게 useRecoilState
   const [toDos, setToDos] = useRecoilState(toDoState);
+
   const { register, handleSubmit, setValue } = useForm<IForm>();
   const handleValid = ({ toDo }: IForm) => {
     setToDos((oldToDos) => [
